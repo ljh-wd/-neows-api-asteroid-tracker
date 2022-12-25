@@ -12,7 +12,7 @@ const useFetch = (startDate, endDate) => {
     // ! API key is safely stored on a backend server.
     const options = {
       method: "GET",
-      url: "http//localhost:8000/",
+      url: "https://asteroid-tracker-api.vercel.com",
       params: { start_date: startDate, end_date: endDate },
     };
 
