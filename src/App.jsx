@@ -16,7 +16,9 @@ function App() {
 
   // ! useFetch hook
 
-  const { data, loading, error } = useFetch(startDate, endDate);
+  const { data, loading, error } = useFetch(
+    `https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${endDate}&api_key=DEMO_KEY`
+  );
 
   // ! callback from getting the dates from DatePicker and updating the state.
 

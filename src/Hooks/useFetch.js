@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const useFetch = (startDate, endDate) => {
+const useFetch = (url) => {
   const [data, setData] = useState();
   const [loading, setLoading] = useState();
   const [error, setError] = useState(null);
@@ -9,24 +9,21 @@ const useFetch = (startDate, endDate) => {
   useEffect(() => {
     setLoading(true);
 
-    // ! API key is safely stored on a backend server.
-    const options = {
-      method: "GET",
-      url: "https://asteroid-tracker-api.vercel.com",
-      params: { start_date: startDate, end_date: endDate },
-    };
-
-    axios
-      .request(options)
-      .then((response) => {
-        setData(response.data);
+    fetch(url)
+      .then((res) => {
+        if (!res.ok) throw Error("The requested data could not be fetched");
+        return res.json();
+      })
+      .then((data) => {
+        setData(data);
         setLoading(false);
+        setError(null);
       })
       .catch((err) => {
-        setError(err.message);
         setLoading(false);
+        setError(err.message);
       });
-  }, [startDate, endDate]);
+  }, [url]);
 
   return { data, loading, error };
 };
