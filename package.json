@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev:frontend": "vite",
-    "dev:backend": "nodemon backend.js",
+    "dev:backend": "nodemon ./API/backend.js",
     "build": "vite build",
     "preview": "vite preview",
     "test": "vitest"
