@@ -10,6 +10,4 @@ Above the data will be a date range picker. The range is completely up to you. Y
 
 The date can be years from now, 1st Jan 2032 for example will bring back data from that year within the date range.
 
-## Important Notes
-
-### The API key is safely stored via the backend, that backend is being hosted elsewhere. If an employer would like to see the code, please contact me via email - lukehookemlh@gmail.com
+### Please note - this is a demo key, if the app doesnt work properly, chances are, it will have timed out. It resets every hour.
